@@ -12,6 +12,7 @@ public class Prenotazione {
     private String nominativo;
     private String telefono;
     private String estremiDocumento;
+    @Description(value = "se l'utente desidera o meno soggiornare")
     private boolean soggiorno;
 
     public Prenotazione(LocalDate checkIn, LocalDate checkOut, int nrPersone, String nominativo, String telefono, String estremiDocumento, boolean soggiorno) {

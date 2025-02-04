@@ -25,7 +25,7 @@ public class PrenotazioniManager {
         return false;
     }
 
-    @Tool("ottieni una lista di prenotazioni salvate da inviare all'utente. il metodo non invia nulla all'utente")
+    @Tool("ottieni una lista di prenotazioni salvate da inviare all'utente")
     public List<Prenotazione> ottieniPrenotazioniSalvate() {
         return prenotazioni;
     }

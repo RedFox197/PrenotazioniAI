@@ -17,9 +17,9 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         GoogleAiGeminiChatModel model = GoogleAiGeminiChatModel.builder()
-                .apiKey("AIzaSyCPNxpP7VLbWGUM2WbSziCQ3I_tsLzXDiM")
+                .apiKey(System.getenv("API_KEY"))
                 .modelName("gemini-2.0-flash-exp")
-                .temperature(0.3)
+                .temperature(0.0)
                 .build();
 
         PrenotazioniManager prenotazioniManager = new PrenotazioniManager();
@@ -54,6 +54,7 @@ public class Main {
 
         Recensione.visualizzaRecensioni();
 
+        // FIXME - Le prenotazioni che passano alla recensione sono ricreate da 0 con gli stessi valori
         for (Recensione recensione : Recensione.recensioni) {
             for (Prenotazione prenotazione : prenotazioniManager.ottieniPrenotazioniSalvate()) {
                 if (prenotazione == recensione.getPrenotazione()) {
